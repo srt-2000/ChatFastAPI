@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Chat</title>
+    <!-- Tailwind CSS for responsive styling and modern UI components -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+<!-- Welcome header for the chat entry page -->
+<h1 class="text-3xl font-bold mb-6">Welcome to chat</h1>
+
+<!-- Validation errors display block
+     This section shows form validation errors returned from the server
+     when user input doesn't meet the Pydantic schema requirements -->
+{% if error_messages %}
+<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 w-full max-w-md">
+    <h3 class="font-bold">Validation Errors:</h3>
+    <ul class="list-disc list-inside">
+        {% for error in error_messages %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<!-- Chat room entry form
+     This form collects user information needed to join a chat room:
+     - Username: Display name for the chat
+     - Room ID: Unique identifier for the chat room
+     - Form submits to /join_chat endpoint via POST method -->
+<form action="/join_chat" method="post" class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+    <!-- Username input field
+         - Required field for user identification
+         - Preserves user input on validation errors
+         - Focus styling with blue ring for better UX -->
+    <label class="block text-gray-700">Enter your name:</label>
+    <input type="text" name="username" required
+           value="{{ username if username else '' }}"
+           class="w-full p-2 border border-gray-300 rounded-lg mt-2 focus:ring-2 focus:ring-blue-500">
+
+    <!-- Room ID input field
+         - Required numeric field for room identification
+         - Minimum value of 1 to prevent invalid room IDs
+         - Preserves user input on validation errors -->
+    <label class="block text-gray-700 mt-4">Enter room ID:</label>
+    <input type="number" name="room_id" required min="1"
+           value="{{ room_id if room_id else '' }}"
+           class="w-full p-2 border border-gray-300 rounded-lg mt-2 focus:ring-2 focus:ring-blue-500">
+    
+    <!-- Submit button
+         - Full width button for easy clicking
+         - Blue background with hover effect
+         - Submits the form to join the chat room -->
+    <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-blue-600">
+        Enter chat
+    </button>
+</form>
+</body>
+</html>
