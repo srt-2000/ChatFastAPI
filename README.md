@@ -4,9 +4,12 @@
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-34%20passing-green.svg)](https://github.com)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A real-time chat application built with FastAPI and WebSocket technology. This project serves as an educational example of modern Python web development, demonstrating WebSocket implementation, form validation, and comprehensive unit testing practices.
+Hi, everyone! It's some education project.
+
+A real-time chat application built with FastAPI and WebSocket technology. 
+This project serves as an educational example of modern Python web development, 
+demonstrating WebSocket implementation, form validation, and comprehensive unit testing practices.
 
 ## ✨ Features
 
@@ -161,15 +164,6 @@ This project demonstrates:
 - **Modern Python practices** - Type hints, async/await, dependency injection
 - **FastAPI best practices** - Router organization, template rendering
 
-## 📄 License
-
-MIT License - feel free to use this project for learning and educational purposes.
-
 ## 👨‍💻 Author
 
-- **Name:** srt-2000
-- **Email:** srt2000888@gmail.ru
-
----
-
-**Happy Learning!** 🚀 This project is designed to help you understand WebSocket implementation and modern Python testing practices.
+- **Name:** srt-2000**Email:** srt2000888@gmail.ru
